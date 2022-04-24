@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="/img/aptylogo.webp">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+<body>
+    {{>header}}
+    <h3>Search for Published contents Only</h3>
+    <div class="getDetails">
+        <input id="tenantKey" placeholder="Enter Tanent Key*">
+
+        <select id="aptyRegion">
+            <option disabled selected value="">Select Apty Region*</option>
+            <option value="app">App</option>
+            <option value="au">Au</option>
+        </select>
+
+        <select id="appID" required>
+            <option disabled selected value=""> Select App ID*</option>
+        </select>
+
+        <select id="envNo" required>
+            <option disabled selected value="">Select Environment*</option>
+        </select>
+
+        <div id="isAptyEnabled"  class="green"></div>
+        
+    
+
+
+        {{!-- <input id="appID" placeholder="Enter App ID"> --}}
+        {{!-- <input id="envNo" placeholder="Enter Environment number"> --}}
+        {{!-- <input id="aptyRegion" placeholder="Enter region ex: app/au etc.."> --}}
+        <div class="buttons">
+            <button type="submit" id="getWorkflows">Workflow</button>
+            <button type="submit" id="getValidations">Validations</button>
+            <button type="submit" id="getTooltips">Tooltips</button>
+            <button type="submit" id="getAnnouncements">Announcements</button>
+        </div>
+    </div>
+
+     
+
+    <div class="showDetails">
+
+
+        <table>
+
+           
+            {{!-- <th>Flow Id</th>
+            <th>Flow Name</th> --}}
+
+        </table>
+
+    </div>
+
+
+    {{!-- const tenantKey = req.query.tenantKey;
+    const appID = req.query.appID;
+    const envNo = req.query.envNo;
+    const aptyRegion = req.query.aptyRegion; --}}
+    {{>footer}}
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

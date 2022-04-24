@@ -1,0 +1,153 @@
+body {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
+footer {
+  color: #888888;
+  /* border-top: 1px, solid, #121212; */
+  margin-top: 16px;
+  padding: 16px 0;
+}
+
+header {
+  /* margin-top: 2px; */
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+header a {
+  color: #888888;
+  margin-right: 16px;
+  text-decoration: none;
+}
+h1 {
+  font-size: 40px;
+  /* margin-bottom: 16px; */
+}
+input,
+select,
+option {
+  /* border: 1px, solid, #888888; */
+  /* padding: 8px; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #888888;
+  text-align: center;
+  font-weight: 700;
+  width: 180px;
+  background-color: #eeeeee;
+  border: none;
+}
+option{
+  text-transform: uppercase;
+}
+input :focus{
+  outline: none;
+}
+
+
+table{
+  /* border: 1px solid; */
+  width: 900px;
+  text-align: center;
+  margin-top: 13px;
+  padding-left: 90px;
+  margin-left: 38px;
+}
+
+/* .buttons {
+  margin-top: 10px;
+  
+} */
+button {
+  margin-top: 10px;
+  cursor: pointer;
+  background: #fe6f15;
+  padding: 8px;
+  color: white;
+
+  border-radius: 9px;
+  border: none;
+  font-weight: 700;
+}
+.showDetails {
+  flex-grow: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.getDetails {
+  /* width: 1000px; */
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin-left: 40px;
+  column-gap: 8px;
+    justify-content: center;
+}
+
+/* .showDetails {
+  /* text-align: -webkit-center; */
+  /* margin-top: 20px;
+} */ 
+
+/* .workflowName,
+.announcementName,
+.validationName,
+.tooltipName,
+.stepId,
+.workflowName {
+  padding-left: 90px;
+}
+td.workflowName {
+  padding-left: 140px;
+} */
+/* th.workflowId{
+    padding-left: 100px;
+}
+th.workflowName{
+    width: 20px;
+} */
+/* td.workflowId,
+td.validationId,
+td.announcementId,
+id.tooltipId {
+  text-align: center;
+}
+td.stepName {
+  padding-left: 100px;
+}
+tbody {
+  display: contents;
+} */
+
+/* #getWorkflowSteps {
+  margin-left: 43%;
+  width: 90px;
+  margin-top: 10px;
+} */
+
+/* .green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+} */
+
+/* option{
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  
+} */

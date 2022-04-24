@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="/img/aptylogo.webp">
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+</head>
+
+<body>
+    {{>header}}
+    <div class="getDetails">
+        <input id="flowid" placeholder="Enter Flow ID">
+        <input id="appID" placeholder="Enter App ID">
+        <input id="tenantID" placeholder="Enter tenantID">
+        
+        <select id="aptyRegion">
+            <option disabled selected value="">Select Apty Region*</option>
+            <option value="app">App</option>
+            <option value="au">Au</option>
+        </select>
+        <button type="submit" id="getWorkflowSteps">Steps</button>
+   
+    </div>
+
+    <div class="showDetails">
+
+        <table>
+            {{!-- <th>Flow Id</th>
+            <th>Flow Name</th> --}}
+        
+        </table>
+
+    </div>
+
+
+    {{!-- const tenantKey = req.query.tenantKey;
+    const appID = req.query.appID;
+    const envNo = req.query.envNo;
+    const aptyRegion = req.query.aptyRegion; --}}
+    {{>footer}}
+
+<script src="/js/steps-script.js"></script>    
+</body>
+
+</html>
