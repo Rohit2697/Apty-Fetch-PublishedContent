@@ -69,6 +69,7 @@ const parseAppIdsEnvs = (tenantKey, aptyRegion) => {
 
         const body = response.body;
 
+        
         for (let i = 0; i < body.length; i++) {
           const envArr = Object.keys(body[i].environments);
           for (let j = 0; j < envArr.length; j++) {
