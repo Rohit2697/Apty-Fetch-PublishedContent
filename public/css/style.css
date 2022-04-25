@@ -25,10 +25,20 @@ header {
 }
 
 header a {
-  color: #888888;
+  /* color: #888888; */
   margin-right: 16px;
   text-decoration: none;
+  padding: 8px;
+  background-color:#eeeeee;
+    /* background-color: #CACBCD; */
+    font-weight: bold;
+    color:black;
+    
 }
+header a:hover{
+  background-color: #888888;
+}
+
 h1 {
   font-size: 40px;
   /* margin-bottom: 16px; */
@@ -47,15 +57,14 @@ option {
   background-color: #eeeeee;
   border: none;
 }
-option{
+option {
   text-transform: uppercase;
 }
-input :focus{
+input :focus {
   outline: none;
 }
 
-
-table{
+table {
   /* border: 1px solid; */
   width: 900px;
   text-align: center;
@@ -95,13 +104,13 @@ button {
   width: 800px;
   margin-left: 40px;
   column-gap: 8px;
-    justify-content: center;
+  justify-content: center;
 }
 
 /* .showDetails {
   /* text-align: -webkit-center; */
-  /* margin-top: 20px;
-} */ 
+/* margin-top: 20px;
+} */
 
 /* .workflowName,
 .announcementName,
