@@ -179,7 +179,7 @@ appID.addEventListener("click", () => {
 });
 
 appID.addEventListener("change", () => {
-  console.log("test");
+ 
   if (this.tenantKey.value && this.aptyRegion.value && this.appID.value) {
     //fetchAppIds(this.tenantKey.value, this.aptyRegion.value);
     fetchEnvs(this.tenantKey.value, this.aptyRegion.value);
