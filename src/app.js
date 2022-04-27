@@ -69,7 +69,6 @@ const parseAppIdsEnvs = (tenantKey, aptyRegion) => {
 
         const body = response.body;
 
-        
         for (let i = 0; i < body.length; i++) {
           const envArr = Object.keys(body[i].environments);
           for (let j = 0; j < envArr.length; j++) {
@@ -274,6 +273,38 @@ app.get("/get-appId-envs", async (req, res) => {
     res.send(e);
   }
 });
+
+app.get("/knowledge-content", async (req, res) => {
+  const knowledgeContentObjarr = [];
+  const tenantKey = req.query.tenantKey;
+  const appID = req.query.appID;
+  const envNo = req.query.envNo;
+  const aptyRegion = req.query.aptyRegion;
+  if (tenantKey && appID && envNo && aptyRegion) {
+    try {
+      const Obj = await parse(
+        tenantKey,
+        appID,
+        envNo,
+        aptyRegion,
+        "knowledge-content"
+      );
+      for (let i = 0; i < Obj.length; i++) {
+        knowledgeContentObjarr.push({
+          knowledgeContenttId: Obj[i].id,
+          knowledgeContentName: Obj[i].name,
+          knowledgeContent: Obj[i].content,
+        });
+      }
+      res.send(knowledgeContentObjarr);
+    } catch (e) {
+      res.status(400).send({ error: e });
+    }
+  } else {
+    res.status(500).send({ error: "Internal Error Please try again later!" });
+  }
+});
+//https://client.app.apty.io/tenant-sQAr9BA2/app-180/env-1/knowledge-content.json?timestamp=1645622148498
 
 app.get("*", (req, res) => {
   res.status(404).send("404 Page Not Found");

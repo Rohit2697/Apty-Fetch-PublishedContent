@@ -8,6 +8,7 @@ const getWorkflows = document.getElementById("getWorkflows");
 const getAnnouncements = document.getElementById("getAnnouncements");
 const getValidations = document.getElementById("getValidations");
 const getTooltips = document.getElementById("getTooltips");
+const getKnowledgeContent=document.getElementById('getKnowledgeContent');
 const table = document.querySelector("table");
 const th = document.querySelector("th");
 const loading = "<h2>Loading content...</h2>";
@@ -156,9 +157,67 @@ const fetchDetails = (contentId, ContentName, contentType) => {
   });
 };
 
+
+
+const fetchKnowledgeContent = (contentId, ContentName,content, contentType) => {
+  table.innerHTML = "";
+  table.innerHTML = loading;
+
+  if (!tenantKey.value && !appID.value && !envNo.value && !aptyRegion.value) {
+    return (table.innerHTML = provideData);
+  }
+  fetch(
+    "/" +
+      contentType +
+      "?tenantKey=" +
+      tenantKey.value +
+      "&appID=" +
+      appID.value +
+      "&envNo=" +
+      envNo.value +
+      "&aptyRegion=" +
+      aptyRegion.value
+  ).then((response) => {
+    response.json().then((Objarr) => {
+      const objKeys = Object.keys(Objarr);
+
+      //if we receive an error
+      if (objKeys[0] === "error") {
+        return (table.innerHTML = error);
+      }
+      //If there is no Data
+      else if (Objarr && !Objarr.length) {
+        return (table.innerHTML = noData);
+      }
+      table.innerHTML = "";
+      const tableHeaderElement = `
+      <th class="${contentId}">${contentId.toUpperCase()}</th>
+      <th class="${ContentName}">${ContentName.toUpperCase()}</th>
+      <th class="${content}">${content.toUpperCase()}</th>`;
+      table.insertAdjacentHTML("afterbegin", tableHeaderElement);
+      for (let i = 0; i < Objarr.length; i++) {
+        const htmlElement = `
+        <tbody><tr>
+          <td class="${contentId}">${Objarr[i][contentId]}</td>
+          <td class="${ContentName}">${Objarr[i][ContentName]}</td>
+          <td class="${content}">${Objarr[i][content]}</td>
+      </tbody></tr>`;
+        table.insertAdjacentHTML("beforeend", htmlElement);
+      }
+    });
+  });
+};
+
+
+
+
+
 getWorkflows?.addEventListener("click", () => {
   fetchDetails("workflowId", "workflowName", "workflow");
 });
+getKnowledgeContent.addEventListener("click", ()=>{
+  fetchKnowledgeContent("knowledgeContenttId", "knowledgeContentName", "knowledgeContent", "knowledge-content")
+})
 
 getAnnouncements?.addEventListener("click", () => {
   fetchDetails("announcementId", "announcementName", "announcement");

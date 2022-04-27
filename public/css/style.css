@@ -109,6 +109,11 @@ button {
   justify-content: center;
 }
 
+.knowledgeContentName{
+  position: relative;
+  left: 20px;
+}
+
 /* .showDetails {
   /* text-align: -webkit-center; */
 /* margin-top: 20px;
